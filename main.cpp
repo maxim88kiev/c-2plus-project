@@ -8,34 +8,23 @@ int main()
 
     system("chcp 65001");
 
-string name = "Vladimir";
-string password = "20otovat";
+   int number;
 
-string userName;
-string userPass;
+   cout << "Введите число 1 или 2" << endl;
 
-// введите имя
+   cin >> number;
 
-cout << "Введите имя: ";
-cin >> userName;
-
-if(userName == name){
-    //Если имя введено верно
-    cout << "Введите пароль: ";
-    cin >> userPass;
-
-    if(userPass == password){
-        cout << "Здравствуйте - " << userName << "Вы вошли в систему" << endl;
-    }
-    else{
-        cout << "Вы ввели не правельный пароль" << endl;
-    }
-
-}else{
-    cout << "Неверный логин" << endl;
-}
-
-
+   switch (number){
+       case 1:
+       case 2:
+       case 3:{
+           cout << " 3 " << endl;
+           break;
+       }
+       default:{
+           cout << "no" << endl;
+       }
+   }
 
     cin.get();
     return 0;
