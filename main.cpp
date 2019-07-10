@@ -1,34 +1,55 @@
 #include <iostream>
-#include <string> // модуль для работы со строками
+#include <string>
+
 
 using namespace std;
+
+
+void ChangeValue(int a, int b);
+void ChangeValueWithPointers(int *a, int *b);
 
 int main()
 {
 
-    system("chcp 65001");
+    int a = 10, b = 15;
 
-   int number;
+    cout << "Before_1 " << a << " " << b <<endl;
 
-   cout << "Введите число 1 или 2" << endl;
+    ChangeValue(a, b);
 
-   cin >> number;
+    cout << "After_1 " << a << " " << b <<endl;
 
-   switch (number){
-       case 1:
-       case 2:
-       case 3:{
-           cout << " 3 " << endl;
-           break;
-       }
-       default:{
-           cout << "no" << endl;
-       }
-   }
+    ChangeValueWithPointers(&a, &b);
 
-    cin.get();
+    cout << "After_2 " << a << " " << b <<endl;
+
+
+    system("pause");
     return 0;
-
 }
+
+void ChangeValue(int a, int b)
+{
+    int tmp = a;
+
+    a = b;
+    b = tmp;
+}
+
+void ChangeValueWithPointers(int *a, int *b)
+{
+
+    cout << *a << " " << *b <<endl;
+
+    int tmp = *a;
+
+    *a = *b;
+    *b = tmp;
+
+    cout << *a << " " << *b <<endl;
+}
+
+
+
 
 
